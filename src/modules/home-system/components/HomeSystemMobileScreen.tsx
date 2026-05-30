@@ -1,4 +1,4 @@
-import { Button } from "@/shared/ui/SystemButton";
+import { SystemButton } from "@/shared/ui/SystemButton";
 import { motion } from "framer-motion";
 import {
   MODULE_ICON_BY_ID,
@@ -27,7 +27,7 @@ export function HomeSystemMobileScreen({
       <section className={mobileHomeStyles.introCard}>
         <h1 className={mobileHomeStyles.introTitle}>
           {greetingPrefix}{" "}
-          <span className="bg-gradient-to-r from-system-primary via-system-secondary to-system-accent bg-clip-text text-transparent">
+          <span className="home-hero-name-gradient bg-gradient-to-r from-system-primary via-system-secondary to-system-accent bg-clip-text text-transparent">
             {name}
           </span>
         </h1>
@@ -73,9 +73,9 @@ export function HomeSystemMobileScreen({
           ))}
         </div>
 
-        <Button variant="cta" className="p-4">
+        <SystemButton variant="cta" className="w-full p-4">
           DOWNLOAD CV
-        </Button>
+        </SystemButton>
       </section>
     </div>
   );

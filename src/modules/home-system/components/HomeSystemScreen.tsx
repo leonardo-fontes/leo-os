@@ -1,4 +1,5 @@
-import { Button } from "@/shared/ui/SystemButton";
+import { SystemButton } from "@/shared/ui/SystemButton";
+import { ThemeToggle } from "@/shared/ui/ThemeToggle";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { HOME_SIDEBAR_MENU_ITEMS, INTRO_TEXT } from "../data/systemGraph.constants";
@@ -34,14 +35,17 @@ export function HomeSystemScreen() {
               <span className="font-display text-lg tracking-[0.16em] text-[#d8e5ff]">LEO_OS</span>
               <span className="h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgba(34,197,94,0.7)]" />
             </div>
-            <Button
-              variant="control"
-              aria-label="Toggle navigation menu"
-              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              className="min-h-11 min-w-11 px-3 text-sm"
-            >
-              MENU
-            </Button>
+            <div className="flex items-center gap-2">
+              <ThemeToggle className="min-h-11 px-3" />
+              <SystemButton
+                variant="control"
+                aria-label="Toggle navigation menu"
+                onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                className="min-h-11 min-w-11 px-3 text-sm"
+              >
+                MENU
+              </SystemButton>
+            </div>
           </div>
 
           {isMobileMenuOpen && (
@@ -55,17 +59,20 @@ export function HomeSystemScreen() {
               <aside className="absolute right-0 top-0 h-full w-[84%] max-w-[320px] border-l border-system-borderSoft bg-[#0b1222] p-4">
                 <div className="mb-4 flex items-center justify-between border-b border-system-borderSoft pb-3">
                   <span className="font-display text-base tracking-[0.14em] text-[#d8e5ff]">LEO_OS NAV</span>
-                  <Button
-                    variant="control"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="min-h-11 min-w-11 px-3"
-                  >
-                    CLOSE
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <ThemeToggle className="min-h-11 px-3" />
+                    <SystemButton
+                      variant="control"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="min-h-11 min-w-11 px-3"
+                    >
+                      CLOSE
+                    </SystemButton>
+                  </div>
                 </div>
                 <nav className="space-y-2">
                   {HOME_SIDEBAR_MENU_ITEMS.map((menuItem, index) => (
-                    <Button
+                    <SystemButton
                       key={menuItem}
                       variant="nav"
                       onClick={() => setIsMobileMenuOpen(false)}
@@ -76,7 +83,7 @@ export function HomeSystemScreen() {
                       }`}
                     >
                       {menuItem}
-                    </Button>
+                    </SystemButton>
                   ))}
                 </nav>
               </aside>
@@ -94,18 +101,21 @@ export function HomeSystemScreen() {
             />
           </div>
 
-          <Button
-            variant="action"
-            className="absolute right-8 top-7 z-30 hidden px-4 py-2 md:block"
-          >
-            DOWNLOAD CV
-          </Button>
+          <div className="absolute right-8 top-7 z-30 hidden items-center gap-2 md:flex">
+            <ThemeToggle className="min-h-10 min-w-10 px-2.5" />
+            <SystemButton
+              variant="action"
+              className="home-download-cv-button px-4 py-2"
+            >
+              DOWNLOAD CV
+            </SystemButton>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.985 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: [0.2, 0.65, 0.3, 1] }}
-            className="absolute inset-0 bottom-20 hidden bg-[#0b1224]/30 md:block"
+            className="absolute inset-0 hidden bg-[#0b1224]/30 md:block"
           >
             <SystemGraph />
           </motion.div>
