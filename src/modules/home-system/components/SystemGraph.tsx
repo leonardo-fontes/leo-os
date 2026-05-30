@@ -13,6 +13,64 @@ import {
 } from "../data/systemStyles";
 import { SystemModuleNetwork } from "./SystemModuleNetwork";
 
+type HeroContentProps = {
+  command: string;
+  greetingPrefix: string;
+  name: string;
+  title: string;
+  description: string;
+  cta: string;
+};
+
+function HeroContent({
+  command,
+  greetingPrefix,
+  name,
+  title,
+  description,
+  cta,
+}: HeroContentProps) {
+  return (
+    <div className="w-full max-w-[560px]">
+      <p className="home-hero-command font-mono text-xs tracking-[0.16em] text-[#7788ad]">{command}</p>
+      <h2 className={homeSystemLayoutStyles.heroTitle}>
+        {greetingPrefix}{" "}
+        <span className="home-hero-name-gradient bg-gradient-to-r from-system-primary via-system-secondary to-system-accent bg-clip-text text-transparent">
+          {name}
+        </span>
+      </h2>
+      <p className={homeSystemLayoutStyles.heroSubtitle}>{title}</p>
+      <p className={homeSystemLayoutStyles.heroDescription}>{description}</p>
+      <div className="mt-7 inline-flex rounded-xl bg-[linear-gradient(125deg,rgba(59,130,246,0.7),rgba(124,58,237,0.66),rgba(192,132,252,0.6))] p-px">
+        <span className="home-explore-button rounded-[11px] bg-[#111b33] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[#a8bcdf]">
+          {cta}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function OrbitLayer() {
+  return (
+    <div className="pointer-events-none absolute inset-0">
+      <div className={orbitStyles.ringOuter} />
+      <div className={orbitStyles.ringMid} />
+      <div className={orbitStyles.ringInner} />
+      <div className={orbitStyles.ringAccent} />
+      <motion.div
+        className={`home-orbit-animated-primary ${orbitStyles.orbitClockwise}`}
+        animate={{ rotate: [0, 360] }}
+        transition={ORBIT_CLOCKWISE_TRANSITION}
+      />
+      <motion.div
+        className={`home-orbit-animated-secondary ${orbitStyles.orbitCounterClockwise}`}
+        animate={{ rotate: [360, 0] }}
+        transition={ORBIT_COUNTER_CLOCKWISE_TRANSITION}
+      />
+    </div>
+  );
+}
+
 export function SystemGraph() {
   const coreGlowSequence = [
     "0 0 36px rgba(37,99,235,0.35),0 0 70px rgba(168,85,247,0.22)",
@@ -22,47 +80,24 @@ export function SystemGraph() {
 
   return (
     <div className="relative h-full w-full overflow-hidden rounded-2xl">
-      <div className="pointer-events-none  inset-0 rounded-2xl border border-system-border" />
+      <div className="home-graph-frame pointer-events-none absolute inset-0 rounded-2xl border border-system-border" />
       <div className={orbitStyles.overlay} />
 
       <div className="relative z-10 flex h-full flex-col md:flex-row">
         <div className={homeSystemLayoutStyles.heroColumn}>
-          <div className="w-full max-w-[560px]">
-            <p className="home-hero-command font-mono text-xs tracking-[0.16em] text-[#7788ad]">{INTRO_TEXT.command}</p>
-            <h2 className={homeSystemLayoutStyles.heroTitle}>
-              {INTRO_TEXT.greetingPrefix}{" "}
-              <span className="home-hero-name-gradient bg-gradient-to-r from-system-primary via-system-secondary to-system-accent bg-clip-text text-transparent">
-                {INTRO_TEXT.name}
-              </span>
-            </h2>
-            <p className={homeSystemLayoutStyles.heroSubtitle}>{INTRO_TEXT.title}</p>
-            <p className={homeSystemLayoutStyles.heroDescription}>{INTRO_TEXT.description}</p>
-            <div className="mt-7 inline-flex rounded-xl bg-[linear-gradient(125deg,rgba(59,130,246,0.7),rgba(124,58,237,0.66),rgba(192,132,252,0.6))] p-px">
-              <span className="home-explore-button rounded-[11px] bg-[#111b33] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[#a8bcdf]">
-                {INTRO_TEXT.cta}
-              </span>
-            </div>
-          </div>
+          <HeroContent
+            command={INTRO_TEXT.command}
+            greetingPrefix={INTRO_TEXT.greetingPrefix}
+            name={INTRO_TEXT.name}
+            title={INTRO_TEXT.title}
+            description={INTRO_TEXT.description}
+            cta={INTRO_TEXT.cta}
+          />
         </div>
 
         <div className={homeSystemLayoutStyles.graphColumn}>
           <div className="relative h-full w-full">
-            <div className="pointer-events-none absolute inset-0">
-              <div className={orbitStyles.ringOuter} />
-              <div className={orbitStyles.ringMid} />
-              <div className={orbitStyles.ringInner} />
-              <div className={orbitStyles.ringAccent} />
-              <motion.div
-                className={`home-orbit-animated-primary ${orbitStyles.orbitClockwise}`}
-                animate={{ rotate: [0, 360] }}
-                transition={ORBIT_CLOCKWISE_TRANSITION}
-              />
-              <motion.div
-                className={`home-orbit-animated-secondary ${orbitStyles.orbitCounterClockwise}`}
-                animate={{ rotate: [360, 0] }}
-                transition={ORBIT_COUNTER_CLOCKWISE_TRANSITION}
-              />
-            </div>
+            <OrbitLayer />
 
             <SystemModuleNetwork center={SYSTEM_GRAPH_CENTER} />
 

@@ -20,7 +20,7 @@ type SystemModuleConnectorsProps = {
 export function SystemModuleConnectors({ center }: SystemModuleConnectorsProps) {
   return (
     <svg
-      className="home-connector-network absolute inset-0 h-full w-full opacity-65 md:opacity-100"
+      className="absolute inset-0 h-full w-full opacity-65 md:opacity-100"
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
       aria-hidden

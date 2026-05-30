@@ -8,6 +8,50 @@ import { SystemGraph } from "./SystemGraph";
 import { SystemSidebar } from "./SystemSidebar";
 import { SystemStatusBar } from "./SystemStatusBar";
 
+type MobileHeaderProps = {
+  onToggleMenu: () => void;
+};
+
+function MobileHeader({ onToggleMenu }: MobileHeaderProps) {
+  return (
+    <div className="sticky top-0 z-40 flex items-center justify-between border-b border-system-borderSoft bg-[#0b1222]/88 px-4 py-3 backdrop-blur-md md:hidden">
+      <div className="flex items-center gap-2.5">
+        <span className="font-display text-lg tracking-[0.16em] text-[#d8e5ff]">LEO_OS</span>
+        <span className="h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgba(34,197,94,0.7)]" />
+      </div>
+      <div className="flex items-center gap-2">
+        <ThemeToggle className="min-h-11 px-3" />
+        <SystemButton
+          variant="control"
+          aria-label="Toggle navigation menu"
+          onClick={onToggleMenu}
+          className="min-h-11 min-w-11 px-3 text-sm"
+        >
+          MENU
+        </SystemButton>
+      </div>
+    </div>
+  );
+}
+
+type DesktopActionBarProps = {
+  className?: string;
+};
+
+function DesktopActionBar({ className }: DesktopActionBarProps) {
+  return (
+    <div className={className}>
+      <ThemeToggle className="min-h-10 min-w-10 px-2.5" />
+      <SystemButton
+        variant="action"
+        className="home-download-cv-button px-4 py-2"
+      >
+        DOWNLOAD CV
+      </SystemButton>
+    </div>
+  );
+}
+
 export function HomeSystemScreen() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -30,23 +74,7 @@ export function HomeSystemScreen() {
         </div>
 
         <section className="relative flex-1 pb-6 md:pb-0">
-          <div className="sticky top-0 z-40 flex items-center justify-between border-b border-system-borderSoft bg-[#0b1222]/88 px-4 py-3 backdrop-blur-md md:hidden">
-            <div className="flex items-center gap-2.5">
-              <span className="font-display text-lg tracking-[0.16em] text-[#d8e5ff]">LEO_OS</span>
-              <span className="h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgba(34,197,94,0.7)]" />
-            </div>
-            <div className="flex items-center gap-2">
-              <ThemeToggle className="min-h-11 px-3" />
-              <SystemButton
-                variant="control"
-                aria-label="Toggle navigation menu"
-                onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-                className="min-h-11 min-w-11 px-3 text-sm"
-              >
-                MENU
-              </SystemButton>
-            </div>
-          </div>
+          <MobileHeader onToggleMenu={() => setIsMobileMenuOpen((prev) => !prev)} />
 
           {isMobileMenuOpen && (
             <div className="fixed inset-0 z-50 md:hidden">
@@ -101,15 +129,7 @@ export function HomeSystemScreen() {
             />
           </div>
 
-          <div className="absolute right-8 top-7 z-30 hidden items-center gap-2 md:flex">
-            <ThemeToggle className="min-h-10 min-w-10 px-2.5" />
-            <SystemButton
-              variant="action"
-              className="home-download-cv-button px-4 py-2"
-            >
-              DOWNLOAD CV
-            </SystemButton>
-          </div>
+          <DesktopActionBar className="absolute right-8 top-7 z-30 hidden items-center gap-2 md:flex" />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.985 }}
