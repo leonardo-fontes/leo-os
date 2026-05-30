@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;700&family=Oxanium:wght@600;700&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-system-background text-system-text;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .boot-surface {
+    background: radial-gradient(1100px 500px at 50% -15%, rgba(37, 99, 235, 0.2), transparent 60%),
+      radial-gradient(800px 480px at 85% 120%, rgba(168, 85, 247, 0.16), transparent 60%),
+      linear-gradient(180deg, #090b14 0%, #0a0f1f 45%, #090b14 100%);
+  }
+
+  .boot-surface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .boot-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.22) 1px, transparent 1.2px),
+      radial-gradient(circle at 70% 70%, rgba(124, 58, 237, 0.24) 1px, transparent 1.2px),
+      radial-gradient(circle at 85% 40%, rgba(37, 99, 235, 0.2) 1px, transparent 1.2px);
+    background-size: 180px 180px, 240px 240px, 210px 210px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .home-surface {
+    background: radial-gradient(900px 460px at 50% -12%, rgba(37, 99, 235, 0.13), transparent 62%),
+      radial-gradient(840px 480px at 92% 105%, rgba(124, 58, 237, 0.12), transparent 58%),
+      radial-gradient(700px 420px at 58% 52%, rgba(37, 99, 235, 0.08), transparent 70%),
+      linear-gradient(180deg, #090b14 0%, #0a1020 38%, #090b14 100%);
+  }
+
+  .home-surface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 50% 52%, rgba(68, 96, 152, 0.17) 1px, transparent 2px),
+      linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 58px 58px;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .home-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 14% 22%, rgba(180, 205, 255, 0.18) 1px, transparent 1.3px),
+      radial-gradient(circle at 68% 72%, rgba(124, 58, 237, 0.2) 1px, transparent 1.4px),
+      radial-gradient(circle at 88% 36%, rgba(37, 99, 235, 0.18) 1px, transparent 1.2px),
+      repeating-radial-gradient(circle at 58% 52%, rgba(90, 124, 196, 0.12) 0 1px, transparent 1px 52px);
+    background-size: 200px 200px, 260px 260px, 220px 220px, auto;
+    opacity: 0.14;
+    pointer-events: none;
+  }
+}
