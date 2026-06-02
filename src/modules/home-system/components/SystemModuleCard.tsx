@@ -1,3 +1,4 @@
+import { cn } from "@/shared/utils/cn";
 import { motion } from "framer-motion";
 import { MODULE_CARD_ENTRY_TRANSITION } from "../animations/systemModuleNetwork.animations";
 import {
@@ -6,7 +7,6 @@ import {
 } from "../data/systemModuleNetwork.data";
 import { moduleCardStyles } from "../data/systemStyles";
 import type { ModuleNode } from "../types";
-import { cn } from "@/shared/utils/cn";
 
 type SystemModuleCardProps = {
   module: ModuleNode;
@@ -16,7 +16,7 @@ type SystemModuleCardProps = {
 export function SystemModuleCard({ module, index }: SystemModuleCardProps) {
   return (
     <div
-      className={cn("absolute z-10 hidden md:block", MODULE_CARD_PLACEMENT_BY_ID[module.id])}
+      className={cn("absolute z-10 hidden lg:block", MODULE_CARD_PLACEMENT_BY_ID[module.id])}
       style={{ left: `${module.x}%`, top: `${module.y}%` }}
     >
       <motion.button

@@ -23,7 +23,7 @@ export function HomeSystemMobileScreen({
   cta,
 }: HomeSystemMobileScreenProps) {
   return (
-    <div className="space-y-4 md:hidden">
+    <div className="space-y-4 lg:hidden">
       <section className={mobileHomeStyles.introCard}>
         <h1 className={mobileHomeStyles.introTitle}>
           {greetingPrefix}{" "}

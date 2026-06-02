@@ -1,117 +1,134 @@
 export const homeSystemLayoutStyles = {
   heroColumn:
-    "relative z-20 flex w-full items-center px-5 pb-6 pt-7 md:h-full md:w-[40%] md:shrink-0 md:px-8 md:py-8 lg:px-12 lg:py-10",
+    "relative z-20 flex w-full items-center px-5 pb-6 pt-7 lg:h-full lg:w-[40%] lg:shrink-0 lg:px-8 lg:py-8 xl:px-12 xl:py-10",
   heroTitle:
-    "home-hero-title mt-4 font-title text-[36px] leading-[1.05] text-system-text sm:text-[42px] md:mt-5 md:text-[50px] lg:text-[58px]",
+    "home-hero-title mt-4 font-title text-[36px] leading-[1.05] text-system-text sm:text-[42px] lg:mt-5 lg:text-[50px] xl:text-[58px]",
   heroSubtitle:
-    "home-hero-subtitle mt-1.5 font-title text-[32px] leading-[1.04] text-system-text sm:text-[36px] md:mt-2 md:text-[44px] lg:text-[52px]",
+    "home-hero-subtitle mt-1.5 font-title text-[32px] leading-[1.04] text-system-text sm:text-[36px] lg:mt-2 lg:text-[44px] xl:text-[52px]",
   heroDescription:
-    "home-hero-description mt-4 max-w-[430px] font-mono text-sm leading-7 text-[#8ea2c8] md:mt-6 md:text-[15px] md:leading-8",
+    "home-hero-description mt-4 max-w-[430px] font-mono text-sm leading-7 text-[var(--home-body-text)] lg:mt-6 lg:text-[15px] lg:leading-8",
   graphColumn:
-    "relative w-full min-h-[520px] px-3 pb-4 md:h-full md:min-h-0 md:w-[60%] md:px-3 md:pb-4 lg:px-4 lg:pb-0",
+    "relative w-full min-h-[520px] px-3 pb-4 lg:h-full lg:min-h-0 lg:w-[60%] lg:px-3 lg:pb-4 xl:px-4 xl:pb-0",
 } as const;
 
 export const moduleCardStyles = {
   outer:
-    "w-44 rounded-2xl bg-[linear-gradient(140deg,rgba(94,122,185,0.55),rgba(99,102,241,0.38),rgba(148,163,184,0.4))] p-px text-left backdrop-blur-sm",
+    "w-44 rounded-2xl bg-[image:var(--home-module-card-border-gradient)] p-px text-left backdrop-blur-sm",
   inner:
     "home-module-panel cursor-default rounded-system bg-[var(--home-module-panel-bg)] px-4 py-3 shadow-panel",
   icon:
-    "flex h-7 w-7 items-center justify-center rounded-lg border border-[#5e7ab955] bg-[#0f1a31] font-mono text-xs text-[#8cabff]",
+    "flex h-7 w-7 items-center justify-center rounded-lg border border-[var(--home-module-icon-border)] bg-[var(--home-module-icon-bg)] font-mono text-xs text-[var(--home-module-icon-text)]",
   status: "font-mono text-micro tracking-[0.12em] text-system-success",
-  title: "mt-3 font-title text-sm tracking-[0.12em] text-[#d6e0f5]",
-  role: "mt-1 font-mono text-micro uppercase tracking-[0.11em] text-[#7086ad]",
-  metric: "mt-2 font-mono text-tiny text-[#9db3dc]",
+  title:
+    "mt-3 font-title text-sm tracking-[0.12em] text-[var(--home-module-title-text)]",
+  role:
+    "mt-1 font-mono text-micro uppercase tracking-[0.11em] text-[var(--home-module-role-text)]",
+  metric:
+    "mt-2 font-mono text-tiny text-[var(--home-module-metric-text)]",
 } as const;
 
 export const orbitStyles = {
   overlay:
-    "pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_20%_18%,rgba(59,130,246,0.17),transparent_40%),radial-gradient(circle_at_77%_68%,rgba(168,85,247,0.14),transparent_44%)]",
+    "pointer-events-none absolute inset-0 rounded-2xl bg-[image:var(--home-orbit-overlay-bg)]",
   ringOuter:
-    "absolute left-1/2 top-[43%] h-[52%] w-[52%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#2b3f6a2a] md:left-[47%] md:top-1/2 md:h-[74%] md:w-[74%]",
+    "absolute left-1/2 top-[43%] h-[52%] w-[52%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--home-orbit-ring-border)] lg:left-[47%] lg:top-1/2 lg:h-[74%] lg:w-[74%]",
   ringMid:
-    "absolute left-1/2 top-[43%] h-[41%] w-[41%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#2b3f6a23] md:left-[47%] md:top-1/2 md:h-[58%] md:w-[58%]",
+    "absolute left-1/2 top-[43%] h-[41%] w-[41%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--home-orbit-ring-border-soft)] lg:left-[47%] lg:top-1/2 lg:h-[58%] lg:w-[58%]",
   ringInner:
-    "absolute left-1/2 top-[43%] h-[31%] w-[31%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#2b3f6a1f] md:left-[47%] md:top-1/2 md:h-[44%] md:w-[44%]",
+    "absolute left-1/2 top-[43%] h-[31%] w-[31%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--home-orbit-ring-border-muted)] lg:left-[47%] lg:top-1/2 lg:h-[44%] lg:w-[44%]",
   ringAccent:
-    "absolute left-1/2 top-[43%] h-[22%] w-[22%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#7c3aed30] md:left-[47%] md:top-1/2 md:h-[31%] md:w-[31%]",
+    "absolute left-1/2 top-[43%] h-[22%] w-[22%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--home-orbit-accent-border)] lg:left-[47%] lg:top-1/2 lg:h-[31%] lg:w-[31%]",
   orbitClockwise:
-    "absolute left-1/2 top-[43%] h-[48%] w-[48%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#2563eb1f] md:left-[47%] md:top-1/2 md:h-[68%] md:w-[68%]",
+    "absolute left-1/2 top-[43%] h-[48%] w-[48%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--home-orbit-primary-border)] lg:left-[47%] lg:top-1/2 lg:h-[68%] lg:w-[68%]",
   orbitCounterClockwise:
-    "absolute left-1/2 top-[43%] h-[35%] w-[35%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#a855f723] md:left-[47%] md:top-1/2 md:h-[49%] md:w-[49%]",
+    "absolute left-1/2 top-[43%] h-[35%] w-[35%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--home-orbit-secondary-border)] lg:left-[47%] lg:top-1/2 lg:h-[49%] lg:w-[49%]",
 } as const;
 
 export const systemCoreStyles = {
   shell:
-    "relative overflow-hidden rounded-[28px] bg-[linear-gradient(150deg,rgba(56,189,248,0.8),rgba(96,165,250,0.48)_36%,rgba(168,85,247,0.86)_72%,rgba(192,132,252,0.74))] p-px text-center",
-  panel: "home-core-panel relative rounded-[27px] bg-[var(--home-core-panel-bg)] p-4 md:p-6",
+    "relative overflow-hidden rounded-[28px] bg-[image:var(--home-core-border-gradient)] p-px text-center",
+  panel:
+    "home-core-panel relative rounded-[27px] bg-[var(--home-core-panel-bg)] p-4 lg:p-6",
   pulseOuter:
-    "pointer-events-none absolute -inset-4 rounded-[28px] border border-[#7c3aed2e]",
+    "pointer-events-none absolute -inset-4 rounded-[28px] border border-[var(--home-core-pulse-border)]",
   pulseInner:
-    "pointer-events-none absolute -inset-7 rounded-[34px] border border-[#2563eb24]",
+    "pointer-events-none absolute -inset-7 rounded-[34px] border border-[var(--home-core-pulse-border-soft)]",
   icon:
-    "mx-auto mb-2.5 flex h-11 w-11 items-center justify-center rounded-xl border border-[#5b78bc88] bg-[#111c34] font-mono text-lg text-[#8eb2ff] md:mb-3 md:h-12 md:w-12 md:text-xl",
+    "mx-auto mb-2.5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--home-core-icon-border)] bg-[var(--home-core-icon-bg)] font-mono text-lg text-[var(--home-core-icon-text)] lg:mb-3 lg:h-12 lg:w-12 lg:text-xl",
   title:
-    "font-title text-[28px] font-semibold tracking-[0.08em] text-[#dce6ff] md:text-[30px]",
+    "font-title text-[28px] font-semibold tracking-[0.08em] text-[var(--home-core-title-text)] lg:text-[30px]",
   subtitle:
-    "mt-1 font-mono text-xs uppercase tracking-[0.13em] text-[#8ea2c8]",
+    "mt-1 font-mono text-xs uppercase tracking-[0.13em] text-[var(--home-core-subtitle-text)]",
 } as const;
 
 export const sidebarStyles = {
   container:
     "home-sidebar-shell relative z-20 flex h-full w-64 shrink-0 flex-col border-r border-[var(--home-sidebar-border)] bg-[var(--home-sidebar-bg)] px-6 py-8 backdrop-blur-md",
-  title: "home-sidebar-title font-display text-2xl tracking-[0.2em] text-[var(--home-sidebar-title)]",
-  statusDot: "h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgba(34,197,94,0.7)]",
+  title:
+    "home-sidebar-title font-display text-2xl tracking-[0.2em] text-[var(--home-sidebar-title)]",
+  statusDot:
+    "h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgb(var(--system-success)/0.7)]",
   terminalIcon:
     "home-terminal-button mt-8 flex h-14 w-14 items-center justify-center rounded-xl border border-[var(--home-terminal-button-border)] bg-[var(--home-terminal-button-bg)] font-mono text-2xl text-[var(--home-terminal-button-text)]",
   navButton:
     "home-sidebar-nav block w-full rounded-lg px-3 py-2 font-mono text-left text-sm tracking-[0.14em] transition-colors",
-  navButtonActive: "home-sidebar-nav-active bg-[var(--home-sidebar-nav-active-bg)] text-[var(--home-sidebar-nav-active-text)]",
-  navButtonIdle: "home-sidebar-nav-idle text-[var(--home-sidebar-nav-idle-text)] hover:bg-[var(--home-sidebar-nav-hover-bg)] hover:text-[var(--home-sidebar-nav-hover-text)]",
+  navButtonActive:
+    "home-sidebar-nav-active bg-[var(--home-sidebar-nav-active-bg)] text-[var(--home-sidebar-nav-active-text)]",
+  navButtonIdle:
+    "home-sidebar-nav-idle text-[var(--home-sidebar-nav-idle-text)] hover:bg-[var(--home-sidebar-nav-hover-bg)] hover:text-[var(--home-sidebar-nav-hover-text)]",
 } as const;
 
 export const statusBarStyles = {
   container:
-    "home-status-bar absolute bottom-0 left-0 right-0 z-20 border-t border-system-borderSoft bg-[#0b1222]/55 px-8 py-4 backdrop-blur-sm",
+    "home-status-bar absolute bottom-0 left-0 right-0 z-20 border-t border-system-borderSoft bg-[color:var(--home-status-bar-bg)]/55 px-8 py-4 backdrop-blur-sm",
   content:
-    "home-status-bar-content flex flex-wrap items-center gap-x-7 gap-y-2 text-xs font-mono tracking-[0.08em] text-[#7f93b8] sm:text-sm",
-  title: "home-status-bar-title text-[#9ab2de]",
+    "home-status-bar-content flex flex-wrap items-center gap-x-7 gap-y-2 text-xs font-mono tracking-[0.08em] text-[var(--home-status-bar-text)] sm:text-sm",
+  title:
+    "home-status-bar-title text-[var(--home-status-bar-title)]",
   online: "text-system-success",
 } as const;
 
 export const mobileHomeStyles = {
-  sectionLabel: "home-section-label font-mono text-micro uppercase tracking-wideSystem text-[#5f739d]",
+  sectionLabel:
+    "home-section-label font-mono text-micro uppercase tracking-wideSystem text-[var(--home-mobile-section-label-text)]",
   introCard: "p-4 text-center",
-  introCommand: "home-intro-command font-mono text-xs tracking-wideSystem text-left mb-4 text-[#7788ad]",
-  introTitle: "home-intro-title mt-2.5 font-title text-[34px] leading-[1.05] text-[#e2e8f8]",
-  introSubtitle: "home-intro-subtitle mt-1 font-title text-[28px] leading-[1.05] text-[#d6e0f5]",
-  introDescription: "home-intro-description mt-2.5 font-mono text-sm leading-7 text-[#8ea2c8]",
+  introCommand:
+    "home-intro-command mb-4 text-left font-mono text-xs tracking-wideSystem text-[var(--home-command-text)]",
+  introTitle:
+    "home-intro-title mt-2.5 font-title text-[34px] leading-[1.05] text-[var(--home-heading-text)]",
+  introSubtitle:
+    "home-intro-subtitle mt-1 font-title text-[28px] leading-[1.05] text-[var(--home-heading-text)]",
+  introDescription:
+    "home-intro-description mt-2.5 font-mono text-sm leading-7 text-[var(--home-body-text)]",
   introCtaWrapper:
-    "mt-4 inline-flex rounded-xl bg-[linear-gradient(125deg,rgba(59,130,246,0.7),rgba(124,58,237,0.66),rgba(192,132,252,0.6))] p-px",
+    "mt-4 inline-flex rounded-xl bg-[image:var(--home-hero-cta-border-gradient)] p-px",
   introCtaButton:
-    "md:min-h-11 rounded-[11px] bg-[#111b33] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[#a8bcdf]",
+    "lg:min-h-11 rounded-[11px] bg-[var(--home-hero-cta-bg)] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--home-hero-cta-text)]",
   coreCard:
-    "rounded-2xl bg-[linear-gradient(150deg,rgba(56,189,248,0.7),rgba(96,165,250,0.4)_36%,rgba(168,85,247,0.72)_72%,rgba(192,132,252,0.64))] p-px",
+    "rounded-2xl bg-[image:var(--home-core-border-gradient)] p-px",
   corePanel:
-    "rounded-system bg-[#0b1428] px-3 py-3 text-center shadow-glow",
+    "rounded-system bg-[var(--home-core-panel-bg)] px-3 py-3 text-center shadow-glow",
   coreIcon:
-    "mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-lg border border-[#5b78bc88] bg-[#111c34] font-mono text-base text-[#8eb2ff]",
+    "mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--home-core-icon-border)] bg-[var(--home-core-icon-bg)] font-mono text-base text-[var(--home-core-icon-text)]",
   coreTitle:
-    "font-title text-[20px] font-semibold tracking-[0.08em] text-[#dce6ff]",
+    "font-title text-[20px] font-semibold tracking-[0.08em] text-[var(--home-core-title-text)]",
   coreSubtitle:
-    "mt-1 font-mono text-micro uppercase tracking-[0.13em] text-[#8ea2c8]",
+    "mt-1 font-mono text-micro uppercase tracking-[0.13em] text-[var(--home-core-subtitle-text)]",
   modulesGrid: "grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2 pb-8",
   moduleCard:
-    "min-h-11 w-full rounded-xl bg-[linear-gradient(140deg,rgba(94,122,185,0.5),rgba(99,102,241,0.34),rgba(148,163,184,0.36))] p-px text-left",
-  modulePanel: "home-module-panel rounded-[11px] bg-[var(--home-module-panel-bg)] px-3 py-2.5 shadow-panel",
+    "min-h-11 w-full rounded-xl bg-[image:var(--home-module-card-border-gradient)] p-px text-left",
+  modulePanel:
+    "home-module-panel rounded-[11px] bg-[var(--home-module-panel-bg)] px-3 py-2.5 shadow-panel",
   moduleIcon:
-    "flex h-7 w-7 items-center justify-center rounded-lg border border-[#5e7ab955] bg-[#0f1a31] font-mono text-xs text-[#8cabff]",
-  moduleStatus: "font-mono text-micro tracking-[0.12em] text-system-success",
+    "flex h-7 w-7 items-center justify-center rounded-lg border border-[var(--home-module-icon-border)] bg-[var(--home-module-icon-bg)] font-mono text-xs text-[var(--home-module-icon-text)]",
+  moduleStatus:
+    "font-mono text-micro tracking-[0.12em] text-system-success",
   moduleTitle:
-    "mt-1.5 font-title text-sm tracking-[0.12em] text-[#d6e0f5]",
+    "mt-1.5 font-title text-sm tracking-[0.12em] text-[var(--home-module-title-text)]",
   moduleRole:
-    "mt-1 font-mono text-micro uppercase tracking-[0.11em] text-[#7086ad]",
-  moduleMetric: "mt-1 font-mono text-tiny text-[#9db3dc]",
+    "mt-1 font-mono text-micro uppercase tracking-[0.11em] text-[var(--home-module-role-text)]",
+  moduleMetric:
+    "mt-1 font-mono text-tiny text-[var(--home-module-metric-text)]",
   networkCard:
-    "overflow-hidden rounded-2xl border border-system-borderSoft bg-[#0b1224]/45 p-3",
+    "overflow-hidden rounded-2xl border border-system-borderSoft bg-[color:var(--home-mobile-network-card-bg)]/45 p-3",
 } as const;
