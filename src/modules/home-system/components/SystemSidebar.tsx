@@ -1,6 +1,6 @@
+import { cn } from "@/shared/utils/cn";
 import { HOME_SIDEBAR_MENU_ITEMS } from "../data/systemGraph.constants";
 import { sidebarStyles } from "../data/systemStyles";
-import { cn } from "@/shared/utils/cn";
 
 export function SystemSidebar() {
   return (
