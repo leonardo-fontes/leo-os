@@ -14,10 +14,10 @@ type MobileHeaderProps = {
 
 function MobileHeader({ onToggleMenu }: MobileHeaderProps) {
   return (
-    <div className="sticky top-0 z-40 flex items-center justify-between border-b border-system-borderSoft bg-[#0b1222]/88 px-4 py-3 backdrop-blur-md md:hidden">
+    <div className="home-mobile-header sticky top-0 z-40 flex items-center justify-between border-b border-[var(--home-mobile-header-border)] bg-[var(--home-mobile-header-bg)] px-4 py-3 backdrop-blur-md md:hidden">
       <div className="flex items-center gap-2.5">
-        <span className="font-display text-lg tracking-[0.16em] text-[#d8e5ff]">LEO_OS</span>
-        <span className="h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgba(34,197,94,0.7)]" />
+        <span className="home-mobile-header-logo font-display text-lg tracking-[0.16em] text-[var(--home-sidebar-title)]">LEO_OS</span>
+        <span className="h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgb(var(--system-success)/0.7)]" />
       </div>
       <div className="flex items-center gap-2">
         <ThemeToggle className="min-h-11 px-3" />
@@ -25,7 +25,7 @@ function MobileHeader({ onToggleMenu }: MobileHeaderProps) {
           variant="control"
           aria-label="Toggle navigation menu"
           onClick={onToggleMenu}
-          className="min-h-11 min-w-11 px-3 text-sm"
+          className="home-mobile-menu-button min-h-11 min-w-11 rounded-lg px-3 text-sm text-[var(--home-terminal-button-text)]"
         >
           MENU
         </SystemButton>
@@ -41,7 +41,7 @@ type DesktopActionBarProps = {
 function DesktopActionBar({ className }: DesktopActionBarProps) {
   return (
     <div className={className}>
-      <ThemeToggle className="min-h-10 min-w-10 px-2.5" />
+      <ThemeToggle className="p-2 items-center justify-center flex" />
       <SystemButton
         variant="action"
         className="home-download-cv-button px-4 py-2"
@@ -88,7 +88,6 @@ export function HomeSystemScreen() {
                 <div className="mb-4 flex items-center justify-between border-b border-system-borderSoft pb-3">
                   <span className="font-display text-base tracking-[0.14em] text-[#d8e5ff]">LEO_OS NAV</span>
                   <div className="flex items-center gap-2">
-                    <ThemeToggle className="min-h-11 px-3" />
                     <SystemButton
                       variant="control"
                       onClick={() => setIsMobileMenuOpen(false)}

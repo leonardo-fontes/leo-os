@@ -17,7 +17,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       onClick={toggleTheme}
       aria-label={ariaLabel}
       title={ariaLabel}
-      className={`home-theme-toggle ${className ?? ""}`.trim()}
+      className={`home-theme-toggle rounded-lg border border-[var(--home-action-border)] bg-[var(--home-action-bg)] ${className ?? ""}`.trim()}
     >
       {isDark ? (
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">

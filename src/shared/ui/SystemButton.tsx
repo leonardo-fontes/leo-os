@@ -5,7 +5,7 @@ type SystemButtonVariant = "action" | "control" | "nav" | "cta";
 
 const buttonVariants: Record<SystemButtonVariant, string> = {
   action:
-    "rounded-lg border border-[#4f66a855] bg-[#0d1529]/70 font-mono text-xs tracking-[0.13em] text-[#a8bbdf] transition hover:border-[#7c3aed77] hover:text-[#c7b7ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-system-secondary/50",
+    "rounded-lg border border-[var(--home-action-border)] bg-[var(--home-action-bg)] font-mono text-xs tracking-[0.13em] text-[var(--home-action-text)] transition hover:border-[var(--home-action-hover-border)] hover:text-[var(--home-action-hover-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-system-secondary/50",
   control:
     "font-mono text-xs tracking-[0.08em] text-[#9fb7e5] transition hover:border-[#7c3aed77] hover:text-[#c7b7ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-system-secondary/50",
   nav: "rounded-lg px-3 py-2 font-mono text-left text-sm tracking-[0.14em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-system-secondary/50",

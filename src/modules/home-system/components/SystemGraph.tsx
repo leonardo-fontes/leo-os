@@ -80,7 +80,6 @@ export function SystemGraph() {
 
   return (
     <div className="relative h-full w-full overflow-hidden rounded-2xl">
-      <div className="home-graph-frame pointer-events-none absolute inset-0 rounded-2xl border border-system-border" />
       <div className={orbitStyles.overlay} />
 
       <div className="relative z-10 flex h-full flex-col md:flex-row">

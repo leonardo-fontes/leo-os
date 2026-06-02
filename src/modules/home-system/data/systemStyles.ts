@@ -15,7 +15,7 @@ export const moduleCardStyles = {
   outer:
     "w-44 rounded-2xl bg-[linear-gradient(140deg,rgba(94,122,185,0.55),rgba(99,102,241,0.38),rgba(148,163,184,0.4))] p-px text-left backdrop-blur-sm",
   inner:
-    "home-module-panel cursor-default rounded-system bg-[#101a31] px-4 py-3 shadow-panel",
+    "home-module-panel cursor-default rounded-system bg-[var(--home-module-panel-bg)] px-4 py-3 shadow-panel",
   icon:
     "flex h-7 w-7 items-center justify-center rounded-lg border border-[#5e7ab955] bg-[#0f1a31] font-mono text-xs text-[#8cabff]",
   status: "font-mono text-micro tracking-[0.12em] text-system-success",
@@ -44,7 +44,7 @@ export const orbitStyles = {
 export const systemCoreStyles = {
   shell:
     "relative overflow-hidden rounded-[28px] bg-[linear-gradient(150deg,rgba(56,189,248,0.8),rgba(96,165,250,0.48)_36%,rgba(168,85,247,0.86)_72%,rgba(192,132,252,0.74))] p-px text-center",
-  panel: "home-core-panel relative rounded-[27px] bg-[#0b1428] p-4 md:p-6",
+  panel: "home-core-panel relative rounded-[27px] bg-[var(--home-core-panel-bg)] p-4 md:p-6",
   pulseOuter:
     "pointer-events-none absolute -inset-4 rounded-[28px] border border-[#7c3aed2e]",
   pulseInner:
@@ -59,15 +59,15 @@ export const systemCoreStyles = {
 
 export const sidebarStyles = {
   container:
-    "home-sidebar-shell relative z-20 flex h-full w-64 shrink-0 flex-col border-r border-system-borderSoft bg-[#0b1222]/76 px-6 py-8 backdrop-blur-md",
-  title: "home-sidebar-title font-display text-2xl tracking-[0.2em] text-[#d8e5ff]",
+    "home-sidebar-shell relative z-20 flex h-full w-64 shrink-0 flex-col border-r border-[var(--home-sidebar-border)] bg-[var(--home-sidebar-bg)] px-6 py-8 backdrop-blur-md",
+  title: "home-sidebar-title font-display text-2xl tracking-[0.2em] text-[var(--home-sidebar-title)]",
   statusDot: "h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgba(34,197,94,0.7)]",
   terminalIcon:
-    "home-terminal-button mt-8 flex h-14 w-14 items-center justify-center rounded-xl border border-[#5d7ec133] bg-[#101a31] font-mono text-2xl text-[#9fb7e5]",
+    "home-terminal-button mt-8 flex h-14 w-14 items-center justify-center rounded-xl border border-[var(--home-terminal-button-border)] bg-[var(--home-terminal-button-bg)] font-mono text-2xl text-[var(--home-terminal-button-text)]",
   navButton:
     "home-sidebar-nav block w-full rounded-lg px-3 py-2 font-mono text-left text-sm tracking-[0.14em] transition-colors",
-  navButtonActive: "home-sidebar-nav-active bg-[#102142] text-[#9bb8ff]",
-  navButtonIdle: "home-sidebar-nav-idle text-[#64769c] hover:bg-[#121e37] hover:text-[#a5b7db]",
+  navButtonActive: "home-sidebar-nav-active bg-[var(--home-sidebar-nav-active-bg)] text-[var(--home-sidebar-nav-active-text)]",
+  navButtonIdle: "home-sidebar-nav-idle text-[var(--home-sidebar-nav-idle-text)] hover:bg-[var(--home-sidebar-nav-hover-bg)] hover:text-[var(--home-sidebar-nav-hover-text)]",
 } as const;
 
 export const statusBarStyles = {
@@ -103,7 +103,7 @@ export const mobileHomeStyles = {
   modulesGrid: "grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2 pb-8",
   moduleCard:
     "min-h-11 w-full rounded-xl bg-[linear-gradient(140deg,rgba(94,122,185,0.5),rgba(99,102,241,0.34),rgba(148,163,184,0.36))] p-px text-left",
-  modulePanel: "home-module-panel rounded-[11px] bg-[#101a31] px-3 py-2.5 shadow-panel",
+  modulePanel: "home-module-panel rounded-[11px] bg-[var(--home-module-panel-bg)] px-3 py-2.5 shadow-panel",
   moduleIcon:
     "flex h-7 w-7 items-center justify-center rounded-lg border border-[#5e7ab955] bg-[#0f1a31] font-mono text-xs text-[#8cabff]",
   moduleStatus: "font-mono text-micro tracking-[0.12em] text-system-success",
