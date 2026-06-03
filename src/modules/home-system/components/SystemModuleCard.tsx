@@ -16,7 +16,10 @@ type SystemModuleCardProps = {
 export function SystemModuleCard({ module, index }: SystemModuleCardProps) {
   return (
     <div
-      className={cn("absolute z-10 hidden lg:block", MODULE_CARD_PLACEMENT_BY_ID[module.id])}
+      className={cn(
+        "absolute z-10 hidden lg:block",
+        MODULE_CARD_PLACEMENT_BY_ID[module.id],
+      )}
       style={{ left: `${module.x}%`, top: `${module.y}%` }}
     >
       <motion.button
@@ -33,19 +36,11 @@ export function SystemModuleCard({ module, index }: SystemModuleCardProps) {
               <span className={moduleCardStyles.icon}>
                 {MODULE_ICON_BY_ID[module.id]}
               </span>
-              <span className={moduleCardStyles.status}>
-                {module.status}
-              </span>
+              <span className={moduleCardStyles.status}>{module.status}</span>
             </div>
-            <p className={moduleCardStyles.title}>
-              {module.label}
-            </p>
-            <p className={moduleCardStyles.role}>
-              {module.role}
-            </p>
-            <p className={moduleCardStyles.metric}>
-              {module.metric}
-            </p>
+            <p className={moduleCardStyles.title}>{module.label}</p>
+            <p className={moduleCardStyles.role}>{module.role}</p>
+            <p className={moduleCardStyles.metric}>{module.metric}</p>
           </div>
         </div>
       </motion.button>

@@ -42,7 +42,7 @@
   );
 
   --home-module-icon-border: #5e7ab955;
-  --home-module-icon-bg: #101a31;
+  --home-module-icon-bg: light-dark(--home-module-panel-bg, #101a31);
   --home-module-icon-text: #8cabff;
   --home-module-title-text: #d3e1ff;
   --home-module-role-text: #7086ad;
@@ -621,20 +621,6 @@
 
   [data-theme="light"] .home-mobile-header-logo {
     color: var(--home-sidebar-title);
-  }
-
-  [data-theme="light"] .home-mobile-menu-button {
-    border: 1px solid var(--home-action-border);
-    background-color: var(--home-action-bg);
-    color: var(--home-action-text);
-  }
-
-  @media (hover: hover) {
-    [data-theme="light"] .home-mobile-menu-button:hover {
-      border-color: var(--home-action-hover-border);
-      background-color: var(--home-action-hover-bg);
-      color: var(--home-action-hover-text);
-    }
   }
 
   [data-theme] .home-sidebar-title {
