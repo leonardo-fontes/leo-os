@@ -1,25 +1,26 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         system: {
-          background: "#090B14",
-          surface: "#111827",
-          panel: "#121D35",
-          border: "rgba(168, 85, 247, 0.18)",
-          borderSoft: "rgba(255, 255, 255, 0.1)",
-          primary: "#2563EB",
-          secondary: "#7C3AED",
-          accent: "#A855F7",
-          text: "#F8FAFC",
-          textSoft: "#D3E1FF",
-          textMuted: "#94A3B8",
-          success: "#22C55E",
-          warning: "#F59E0B",
-          danger: "#EF4444",
+          background: "rgb(var(--system-background) / <alpha-value>)",
+          surface: "rgb(var(--system-surface) / <alpha-value>)",
+          panel: "rgb(var(--system-panel) / <alpha-value>)",
+          border: "rgb(var(--system-border) / <alpha-value>)",
+          borderSoft: "rgb(var(--system-border-soft) / <alpha-value>)",
+          primary: "rgb(var(--system-primary) / <alpha-value>)",
+          secondary: "rgb(var(--system-secondary) / <alpha-value>)",
+          accent: "rgb(var(--system-accent) / <alpha-value>)",
+          text: "rgb(var(--system-text) / <alpha-value>)",
+          textSoft: "rgb(var(--system-text-soft) / <alpha-value>)",
+          textMuted: "rgb(var(--system-text-muted) / <alpha-value>)",
+          success: "rgb(var(--system-success) / <alpha-value>)",
+          warning: "rgb(var(--system-warning) / <alpha-value>)",
+          danger: "rgb(var(--system-danger) / <alpha-value>)",
         },
       },
       fontFamily: {

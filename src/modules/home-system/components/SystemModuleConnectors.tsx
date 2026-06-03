@@ -20,7 +20,7 @@ type SystemModuleConnectorsProps = {
 export function SystemModuleConnectors({ center }: SystemModuleConnectorsProps) {
   return (
     <svg
-      className="absolute inset-0 h-full w-full opacity-65 md:opacity-100"
+      className="absolute inset-0 h-full w-full opacity-65 lg:opacity-100"
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
       aria-hidden
@@ -74,6 +74,7 @@ export function SystemModuleConnectors({ center }: SystemModuleConnectorsProps) 
             />
 
             <motion.circle
+              className="home-connector-dot"
               r="0.24"
               fill={CONNECTOR_DOT_COLOR}
               initial={{ opacity: 0, cx: center.x, cy: center.y }}

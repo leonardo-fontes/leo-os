@@ -6,7 +6,7 @@ export const SYSTEM_MODULES: ModuleNode[] = [
     label: "EXPERIENCE",
     role: "enterprise applications",
     status: "ACTIVE",
-    metric: "5+ years",
+    metric: "3+ years",
     x: 23,
     y: 34,
     tooltip: ["Enterprise Applications", "Angular", "React", "TypeScript"],
