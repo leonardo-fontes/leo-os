@@ -56,26 +56,26 @@ export const systemCoreStyles = {
   icon:
     "mx-auto mb-2.5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--home-core-icon-border)] bg-[var(--home-core-icon-bg)] font-mono text-lg text-[var(--home-core-icon-text)] lg:mb-3 lg:h-12 lg:w-12 lg:text-xl",
   title:
-    "font-title text-[28px] font-semibold tracking-[0.08em] text-[var(--home-core-title-text)] lg:text-[30px]",
+    "font-title text-[28px] font-semibold tracking-[0.08em] text-[var(--color-text-bright)] lg:text-[30px]",
   subtitle:
     "mt-1 font-mono text-xs uppercase tracking-[0.13em] text-[var(--home-core-subtitle-text)]",
 } as const;
 
 export const sidebarStyles = {
   container:
-    "home-sidebar-shell fixed left-0 top-0 z-40 hidden h-screen w-64 flex-col border-r border-[var(--home-sidebar-border)] bg-[var(--home-sidebar-bg)] px-6 py-8 backdrop-blur-md lg:flex",
+    "fixed left-0 top-0 z-40 hidden h-screen w-64 flex-col border-r border-[var(--home-sidebar-border)] bg-[var(--home-sidebar-bg)] px-6 py-8 backdrop-blur-md lg:flex",
   title:
-    "home-sidebar-title font-display text-2xl tracking-[0.2em] text-[var(--home-sidebar-title)]",
+    "font-display text-2xl tracking-[0.2em] text-[var(--home-sidebar-title)]",
   statusDot:
-    "h-2.5 w-2.5 rounded-full bg-system-success shadow-[0_0_10px_rgb(var(--system-success)/0.7)]",
+    "h-2.5 w-2.5 rounded-full bg-system-success animate-pulse",
   terminalIcon:
-    "home-terminal-button mt-8 flex h-14 w-14 items-center justify-center rounded-xl border border-[var(--home-terminal-button-border)] bg-[var(--home-terminal-button-bg)] font-mono text-2xl text-[var(--home-terminal-button-text)]",
+    "mt-8 flex h-14 w-14 items-center justify-center rounded-xl border border-[var(--home-terminal-button-border)] bg-[var(--home-terminal-button-bg)] font-mono text-2xl text-[var(--home-terminal-button-text)]",
   navButton:
     "home-sidebar-nav block w-full rounded-lg px-3 py-2 font-mono text-left text-sm tracking-[0.14em] text-[var(--home-sidebar-nav-text)] transition-colors",
   navButtonActive:
-    "home-sidebar-nav-active bg-[var(--home-sidebar-nav-active-bg)] text-[var(--home-sidebar-nav-active-text)]",
+    "home-sidebar-nav-active bg-[var(--home-sidebar-nav-active-bg)] text-white",
   navButtonIdle:
-    "home-sidebar-nav-idle text-[var(--home-sidebar-nav-idle-text)] hover:bg-[var(--home-sidebar-nav-hover-bg)] hover:text-[var(--home-sidebar-nav-hover-text)]",
+    "home-sidebar-nav-idle hover:bg-[var(--home-sidebar-nav-hover-bg)] hover:text-[var(--home-sidebar-nav-hover-text)]",
 } as const;
 
 export const statusBarStyles = {
@@ -111,7 +111,7 @@ export const mobileHomeStyles = {
   coreIcon:
     "mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--home-core-icon-border)] bg-[var(--home-core-icon-bg)] font-mono text-base text-[var(--home-core-icon-text)]",
   coreTitle:
-    "font-title text-[20px] font-semibold tracking-[0.08em] text-[var(--home-core-title-text)]",
+    "font-title text-[20px] font-semibold tracking-[0.08em] text-[var(--color-text-bright)]",
   coreSubtitle:
     "mt-1 font-mono text-micro uppercase tracking-[0.13em] text-[var(--home-core-subtitle-text)]",
   modulesGrid: "grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2 pb-8",

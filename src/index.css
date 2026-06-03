@@ -12,9 +12,8 @@
   --color-dark-bg: #090b14;
   --color-dark-surface: #111827;
   --color-dark-panel: #121d35;
-  --color-dark-panel-soft: #101a31;
+  --color-dark-soft: #101a31;
   --color-dark-core-panel: #0b1428;
-  --color-dark-module-panel: #101a31;
   --color-dark-overlay: #0b1222;
 
   --color-text-bright: #dbeafe;
@@ -42,7 +41,7 @@
   );
 
   --home-module-icon-border: #5e7ab955;
-  --home-module-icon-bg: light-dark(--home-module-panel-bg, #101a31);
+  --home-module-icon-bg: light-dark(--home-module-panel-bg, --color-dark-soft);
   --home-module-icon-text: #8cabff;
   --home-module-title-text: #d3e1ff;
   --home-module-role-text: #7086ad;
@@ -80,7 +79,6 @@
   --home-core-icon-border: #5b78bc88;
   --home-core-icon-bg: #121d35;
   --home-core-icon-text: #8eb2ff;
-  --home-core-title-text: #dbeafe;
   --home-core-subtitle-text: #8ea2c8;
 
   --home-status-bar-bg: #0b1222;
@@ -200,9 +198,8 @@
   --home-sidebar-nav-text: light-dark(var(--color-slate-600), #64769c);
   --home-sidebar-nav-idle-text: light-dark(var(--color-slate-500), #64769c);
   --home-sidebar-nav-hover-bg: light-dark(rgba(22, 33, 59, 0.1), #121d35);
-  --home-sidebar-nav-hover-text: light-dark(var(--color-slate-800), #a8bbdf);
-  --home-sidebar-nav-active-bg: light-dark(#243453, #102142);
-  --home-sidebar-nav-active-text: light-dark(#e5efff, #9bb8ff);
+  --home-sidebar-nav-hover-text: light-dark(var(--color-slate-800), var(--color-text-bright));
+  --home-sidebar-nav-active-bg: light-dark(var(--color-blue-500), #102142);
 
   --home-mobile-header-bg: light-dark(
     var(--home-sidebar-bg),
@@ -215,13 +212,13 @@
 
   --home-module-panel-bg: light-dark(
     var(--color-light-module-panel),
-    var(--color-dark-module-panel)
+    var(--color-dark-soft)
   );
   --home-core-panel-bg: light-dark(
     var(--color-light-core-panel),
     var(--color-dark-core-panel)
   );
-  --home-terminal-button-bg: light-dark(#1b2a48, #101a31);
+  --home-terminal-button-bg: light-dark(var(--color-blue-500), var(--color-dark-soft));
   --home-terminal-button-border: light-dark(
     rgba(79, 119, 204, 0.3),
     rgba(93, 126, 193, 0.2)
