@@ -16,25 +16,26 @@ export const experienceSystemStyles = {
     "font-display text-sm uppercase tracking-[0.18em] text-[var(--experience-heading-text)]",
   timeline: "relative mt-9 space-y-10 pl-10 sm:pl-12",
   timelineLine:
-    "experience-timeline-line absolute bottom-5 left-[11px] top-3 w-px sm:left-[13px]",
+    "experience-timeline-line absolute bottom-5 left-[11px] top-3 w-px bg-[image:var(--experience-timeline-line-bg)] shadow-[var(--experience-timeline-line-shadow)] sm:left-[13px]",
   timelineItem: "relative",
   timelineDot:
-    "experience-timeline-dot absolute -left-10 top-1.5 h-6 w-6 rounded-full p-1 sm:-left-12 sm:h-7 sm:w-7",
-  timelineDotCore: "block h-full w-full rounded-full bg-[var(--experience-dot-bg)]",
+    "experience-timeline-dot absolute -left-10 top-1.5 h-6 w-6 rounded-full p-1 transition-[background-color,border-color,box-shadow,opacity] duration-[var(--motion-theme-medium)] ease-[var(--motion-ease-system)] motion-reduce:transition-none sm:-left-12 sm:h-7 sm:w-7",
+  timelineDotCore:
+    "block h-full w-full rounded-full bg-[var(--experience-dot-bg)]",
   period:
     "font-mono text-xs font-semibold tracking-[0.12em] text-[var(--experience-accent-text)]",
-  role:
-    "mt-1 font-title text-xl font-semibold text-[var(--experience-heading-text)] sm:text-2xl",
+  role: "mt-1 font-title text-xl font-semibold text-[var(--experience-heading-text)] sm:text-2xl",
   meta: "text-[var(--experience-body-text)]",
-  highlights: "mt-3 space-y-2 font-mono text-xs leading-6 sm:text-sm sm:leading-7",
+  highlights:
+    "mt-3 space-y-2 font-mono text-xs leading-6 sm:text-sm sm:leading-7",
   highlightLabel:
     "text-[var(--experience-highlight-label-text)] font-semibold tracking-[0.1em]",
   highlightText: "text-[var(--experience-body-text)]",
-  techGrid: "mt-7 grid grid-cols-2 gap-3 min-[420px]:grid-cols-3 lg:grid-cols-2",
+  techGrid:
+    "mt-7 grid grid-cols-2 gap-3 min-[420px]:grid-cols-3 lg:grid-cols-2",
   techCard:
-    "experience-tech-card rounded-2xl border border-[var(--experience-tech-card-border)] bg-[var(--experience-tech-card-bg)] p-3 text-center transition hover:border-[var(--experience-tech-card-hover-border)]",
+    "experience-tech-card rounded-2xl border border-[var(--experience-tech-card-border)] bg-[var(--experience-tech-card-bg)] p-3 text-center transition-[background-color,border-color,box-shadow,opacity] duration-[var(--motion-theme-medium)] ease-[var(--motion-ease-system)] hover:border-[var(--experience-tech-card-hover-border)] hover:shadow-[var(--experience-tech-card-hover-shadow)] motion-reduce:transition-none",
   techToken:
     "mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--experience-tech-token-border)] bg-[var(--experience-tech-token-bg)] font-display text-lg text-[var(--experience-accent-text)]",
-  techLabel:
-    "mt-3 block font-mono text-xs text-[var(--experience-body-text)]",
+  techLabel: "mt-3 block font-mono text-xs text-[var(--experience-body-text)]",
 } as const;

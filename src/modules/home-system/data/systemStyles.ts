@@ -2,9 +2,9 @@ export const homeSystemLayoutStyles = {
   heroColumn:
     "relative z-20 flex w-full items-center px-5 pb-6 pt-7 lg:h-full lg:w-[40%] lg:shrink-0 lg:px-8 lg:py-8 xl:px-12 xl:py-10",
   heroTitle:
-    "home-hero-title mt-4 font-title text-[36px] leading-[1.05] text-system-text sm:text-[42px] lg:mt-5 lg:text-[50px] xl:text-[58px]",
+    "home-hero-title mt-4 font-title text-[36px] leading-[1.05] text-[var(--home-heading-text)] sm:text-[42px] lg:mt-5 lg:text-[50px] xl:text-[58px]",
   heroSubtitle:
-    "home-hero-subtitle mt-1.5 font-title text-[32px] leading-[1.04] text-system-text sm:text-[36px] lg:mt-2 lg:text-[44px] xl:text-[52px]",
+    "home-hero-subtitle mt-1.5 font-title text-[32px] leading-[1.04] text-[var(--home-heading-text)] sm:text-[36px] lg:mt-2 lg:text-[44px] xl:text-[52px]",
   heroDescription:
     "home-hero-description mt-4 max-w-[430px] font-mono text-sm leading-7 text-[var(--home-body-text)] lg:mt-6 lg:text-[15px] lg:leading-8",
   graphColumn:
@@ -71,7 +71,7 @@ export const sidebarStyles = {
   terminalIcon:
     "home-terminal-button mt-8 flex h-14 w-14 items-center justify-center rounded-xl border border-[var(--home-terminal-button-border)] bg-[var(--home-terminal-button-bg)] font-mono text-2xl text-[var(--home-terminal-button-text)]",
   navButton:
-    "home-sidebar-nav block w-full rounded-lg px-3 py-2 font-mono text-left text-sm tracking-[0.14em] transition-colors",
+    "home-sidebar-nav block w-full rounded-lg px-3 py-2 font-mono text-left text-sm tracking-[0.14em] text-[var(--home-sidebar-nav-text)] transition-colors",
   navButtonActive:
     "home-sidebar-nav-active bg-[var(--home-sidebar-nav-active-bg)] text-[var(--home-sidebar-nav-active-text)]",
   navButtonIdle:
@@ -90,7 +90,7 @@ export const statusBarStyles = {
 
 export const mobileHomeStyles = {
   sectionLabel:
-    "home-section-label font-mono text-micro uppercase tracking-wideSystem text-[var(--home-mobile-section-label-text)]",
+    "home-section-label font-mono text-micro uppercase tracking-wideSystem text-[var(--home-command-text)]",
   introCard: "p-4 text-center",
   introCommand:
     "home-intro-command mb-4 text-left font-mono text-xs tracking-wideSystem text-[var(--home-command-text)]",

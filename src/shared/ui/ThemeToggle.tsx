@@ -17,7 +17,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       onClick={toggleTheme}
       aria-label={ariaLabel}
       title={ariaLabel}
-      className={`home-theme-toggle rounded-lg border border-[var(--home-action-border)] bg-[var(--home-action-bg)] ${className ?? ""}`.trim()}
+      className={`home-theme-toggle group rounded-lg border border-[var(--home-action-border)] bg-[var(--home-action-bg)] transition-[background-color,color,border-color,box-shadow,opacity] duration-[var(--motion-theme-base)] ease-[var(--motion-ease-system)] hover:border-[var(--home-action-hover-border)] hover:bg-[var(--home-action-hover-bg)] motion-reduce:transition-none ${className ?? ""}`.trim()}
     >
       {isDark ? (
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
@@ -30,7 +30,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
           />
         </svg>
       ) : (
-        <svg className="home-theme-toggle-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+        <svg className="home-theme-toggle-moon text-[var(--home-theme-toggle-icon)] transition-colors duration-[var(--motion-theme-icon)] ease-[var(--motion-ease-system)] group-hover:text-[var(--home-theme-toggle-icon-hover)] motion-reduce:transition-none" viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
           <path
             d="M20.7 14.2A8.5 8.5 0 1 1 9.8 3.3a7 7 0 1 0 10.9 10.9Z"
             stroke="currentColor"

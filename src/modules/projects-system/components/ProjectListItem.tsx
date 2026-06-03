@@ -36,7 +36,9 @@ export function ProjectListItem({
           aria-expanded={isSelected}
           onClick={() => onSelect(project)}
         >
-          <span className={projectsSystemStyles.projectToken}>{project.token}</span>
+          <span className={projectsSystemStyles.projectToken}>
+            {project.token}
+          </span>
           <div className={projectsSystemStyles.listText}>
             <h3 className={projectsSystemStyles.listTitle}>{project.title}</h3>
             <p className={projectsSystemStyles.listStack}>

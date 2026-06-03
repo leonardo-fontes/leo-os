@@ -275,6 +275,7 @@
     rgba(37, 99, 235, 0.58),
     rgba(168, 85, 247, 0.2)
   );
+  --experience-timeline-line-shadow: 0 0 18px rgba(124, 58, 237, 0.24);
   --experience-dot-shell-bg: var(--home-hero-cta-border-gradient);
   --experience-dot-bg: light-dark(#e5efff, #7c3aed);
   --experience-dot-shadow: 0 0 18px rgba(124, 58, 237, 0.4);
@@ -287,6 +288,7 @@
     rgba(94, 122, 185, 0.18)
   );
   --experience-tech-card-hover-border: var(--home-action-hover-border);
+  --experience-tech-card-hover-shadow: 0 0 24px rgba(37, 99, 235, 0.16);
   --experience-tech-token-bg: var(--home-module-panel-bg);
   --experience-tech-token-border: var(--home-module-icon-border);
 
@@ -368,10 +370,6 @@
   border-top-color: rgba(124, 147, 184, 0.24);
 }
 
-[data-theme="dark"] .home-graph-frame {
-  border-color: rgba(124, 58, 237, 0.28);
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -383,6 +381,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
 
 @layer components {
@@ -392,9 +396,7 @@
   .home-core-panel,
   .experience-panel,
   .experience-timeline-panel,
-  .experience-tech-card,
-  .projects-detail-panel,
-  .projects-list-item {
+  .projects-detail-panel {
     transition-property: background-color, box-shadow, opacity;
     transition-duration: var(--motion-theme-slowest);
     transition-timing-function: var(--motion-ease-system);
@@ -407,18 +409,13 @@
   }
 
   .home-module-panel,
-  .home-status-bar,
-  .experience-timeline-dot {
+  .home-status-bar {
     transition-property: background-color, border-color, box-shadow, opacity;
     transition-duration: var(--motion-theme-medium);
     transition-timing-function: var(--motion-ease-system);
   }
 
-  .home-download-cv-button,
-  .home-explore-button,
   .home-terminal-button,
-  .home-theme-toggle,
-  .projects-filter-button,
   .home-sidebar-nav,
   .home-sidebar-nav-idle,
   .home-sidebar-nav-active {
@@ -456,21 +453,14 @@
     .home-module-panel,
     .home-core-panel,
     .home-status-bar,
-    .home-download-cv-button,
-    .home-explore-button,
     .home-terminal-button,
-    .home-theme-toggle,
     .home-hero-title,
     .home-hero-subtitle,
     .home-hero-description,
     .home-hero-command,
     .experience-panel,
     .experience-timeline-panel,
-    .experience-tech-card,
-    .experience-timeline-dot,
     .projects-detail-panel,
-    .projects-list-item,
-    .projects-filter-button,
     .home-intro-title,
     .home-intro-subtitle,
     .home-intro-description,
@@ -478,10 +468,6 @@
     .home-section-label,
     .home-hero-name-gradient {
       transition: none;
-    }
-
-    html {
-      scroll-behavior: auto;
     }
   }
 
@@ -673,41 +659,13 @@
     }
   }
 
-  .experience-timeline-line {
-    background: var(--experience-timeline-line-bg);
-    box-shadow: 0 0 18px rgba(124, 58, 237, 0.24);
-  }
-
   .experience-timeline-dot {
     background: var(--experience-dot-shell-bg);
     box-shadow: var(--experience-dot-shadow);
   }
 
-  .experience-tech-card:hover {
-    box-shadow: 0 0 24px rgba(37, 99, 235, 0.16);
-  }
-
   .projects-surface {
     position: relative;
-  }
-
-  .projects-filter-scroll {
-    scrollbar-width: none;
-  }
-
-  .projects-filter-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  .projects-filter-button:hover,
-  .projects-list-item:hover {
-    border-color: var(--projects-card-active-border);
-  }
-
-  .projects-list-item-active {
-    background-color: var(--projects-card-active-bg);
-    border-color: var(--projects-card-active-border);
-    box-shadow: var(--projects-card-active-shadow);
   }
 
   .projects-detail-panel::before {
@@ -811,80 +769,6 @@
     backdrop-filter: blur(10px);
   }
 
-  [data-theme="light"] .home-mobile-header {
-    background-color: var(--home-mobile-header-bg);
-    border-bottom-color: var(--home-mobile-header-border);
-  }
-
-  [data-theme="light"] .home-mobile-header-logo {
-    color: var(--home-sidebar-title);
-  }
-
-  [data-theme] .home-sidebar-title {
-    color: var(--home-sidebar-title);
-  }
-
-  [data-theme] .home-sidebar-nav {
-    color: var(--home-sidebar-nav-text);
-  }
-
-  [data-theme] .home-sidebar-nav-idle {
-    color: var(--home-sidebar-nav-idle-text);
-  }
-
-  [data-theme] .home-sidebar-nav-idle:hover {
-    background-color: var(--home-sidebar-nav-hover-bg);
-    color: var(--home-sidebar-nav-hover-text);
-  }
-
-  [data-theme] .home-sidebar-nav-active {
-    background-color: var(--home-sidebar-nav-active-bg);
-    color: var(--home-sidebar-nav-active-text);
-  }
-
-  [data-theme="light"] .home-hero-title,
-  [data-theme="light"] .home-hero-subtitle,
-  [data-theme="light"] .home-intro-title,
-  [data-theme="light"] .home-intro-subtitle {
-    color: var(--home-heading-text);
-  }
-
-  [data-theme="light"] .home-hero-description,
-  [data-theme="light"] .home-intro-description {
-    color: var(--home-body-text);
-  }
-
-  [data-theme="light"] .home-hero-command,
-  [data-theme="light"] .home-intro-command,
-  [data-theme="light"] .home-section-label {
-    color: var(--home-command-text);
-  }
-
-  [data-theme="light"] .home-explore-button {
-    background-color: var(--home-explore-button-bg);
-    color: var(--home-explore-button-text);
-  }
-
-  [data-theme] .home-module-panel {
-    background-color: var(--home-module-panel-bg);
-  }
-
-  [data-theme] .home-core-panel {
-    background-color: var(--home-core-panel-bg);
-  }
-
-  [data-theme] .home-terminal-button {
-    background-color: var(--home-terminal-button-bg);
-    border-color: var(--home-terminal-button-border);
-    color: var(--home-terminal-button-text);
-  }
-
-  [data-theme="light"] .home-download-cv-button:hover {
-    background-color: var(--home-action-hover-bg);
-    border-color: var(--home-action-hover-border);
-    color: var(--home-action-hover-text);
-  }
-
   [data-theme="light"] .home-hero-name-gradient {
     background-image: linear-gradient(
       90deg,
@@ -894,43 +778,10 @@
     );
   }
 
-  [data-theme="light"] .home-theme-toggle-moon {
-    color: var(--home-theme-toggle-icon);
-    transition-property: color;
-    transition-duration: var(--motion-theme-icon);
-    transition-timing-function: var(--motion-ease-system);
-  }
-
-  [data-theme="light"] .home-theme-toggle {
-    background-color: var(--home-action-bg);
-    border-color: var(--home-action-border);
-  }
-
-  [data-theme="light"] .home-theme-toggle:hover {
-    background-color: var(--home-action-hover-bg);
-    border-color: var(--home-action-hover-border);
-  }
-
-  [data-theme="light"] .home-theme-toggle:hover .home-theme-toggle-moon {
-    color: var(--home-theme-toggle-icon-hover);
-  }
-
   [data-theme="light"] .home-connector-dot {
     r: 0.28;
     fill: rgba(96, 165, 250, 0.85);
     filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.35))
       drop-shadow(0 0 18px rgba(96, 165, 250, 0.18));
-  }
-
-  [data-theme="light"] .home-orbit-animated-primary {
-    border-color: rgba(79, 119, 204, 0.3);
-    box-shadow: 0 0 36px rgba(96, 165, 250, 0.18);
-    opacity: 0.62;
-  }
-
-  [data-theme="light"] .home-orbit-animated-secondary {
-    border-color: rgba(139, 92, 246, 0.26);
-    box-shadow: 0 0 32px rgba(96, 165, 250, 0.16);
-    opacity: 0.56;
   }
 }

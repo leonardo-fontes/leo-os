@@ -9,18 +9,18 @@ export const projectsSystemStyles = {
     "mt-5 font-title text-[38px] leading-none text-[var(--projects-heading-text)] sm:text-[46px] lg:text-[54px]",
   leftColumn: "min-w-0",
   filters:
-    "projects-filter-scroll mt-7 flex w-full max-w-full gap-2 overflow-x-auto pb-2 lg:flex-wrap lg:overflow-visible lg:pb-0",
+    "projects-filter-scroll mt-7 flex w-full max-w-full gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-wrap lg:overflow-visible lg:pb-0",
   filterButton:
-    "projects-filter-button shrink-0 rounded-lg border border-[var(--projects-filter-border)] bg-[var(--projects-filter-bg)] px-4 py-2.5 font-mono text-xs text-[var(--projects-filter-text)] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-system-secondary/50",
+    "projects-filter-button shrink-0 rounded-lg border border-[var(--projects-filter-border)] bg-[var(--projects-filter-bg)] px-4 py-2.5 font-mono text-xs text-[var(--projects-filter-text)] transition-[background-color,color,border-color,box-shadow,opacity] duration-[var(--motion-theme-base)] ease-[var(--motion-ease-system)] hover:border-[var(--projects-card-active-border)] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-system-secondary/50",
   filterButtonActive:
     "projects-filter-button-active border-[var(--projects-filter-active-border)] bg-[var(--projects-filter-active-bg)] text-[var(--projects-filter-active-text)] shadow-cta",
   list: "mt-4 space-y-3",
   listItem:
-    "projects-list-item w-full max-w-full min-w-0 overflow-hidden rounded-2xl border border-[var(--projects-card-border)] bg-[var(--projects-card-bg)] p-4 text-left transition lg:flex lg:items-center lg:gap-4",
+    "projects-list-item w-full max-w-full min-w-0 overflow-hidden rounded-2xl border border-[var(--projects-card-border)] bg-[var(--projects-card-bg)] p-4 text-left transition-[background-color,box-shadow,opacity,border-color] duration-[var(--motion-theme-slowest)] ease-[var(--motion-ease-system)] hover:border-[var(--projects-card-active-border)] motion-reduce:transition-none lg:flex lg:items-center lg:gap-4",
   listItemHeader:
     "flex w-full min-w-0 items-center gap-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-system-secondary/50 lg:contents",
   listItemActive:
-    "projects-list-item-active",
+    "projects-list-item-active border-[var(--projects-card-active-border)] bg-[var(--projects-card-active-bg)] shadow-[var(--projects-card-active-shadow)]",
   projectToken:
     "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[var(--projects-token-border)] bg-[var(--projects-token-bg)] font-display text-base text-[var(--projects-accent-text)]",
   listText: "min-w-0 flex-1",

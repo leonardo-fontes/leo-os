@@ -37,7 +37,7 @@ function DesktopActionBar({ className }: DesktopActionBarProps) {
       <a href="/cv-leonardo-fontes.pdf" download="Leonardo-Fontes-CV.pdf">
         <SystemButton
           variant="action"
-          className="home-download-cv-button px-4 py-2"
+          className="home-download-cv-button px-4 py-2 transition-[background-color,color,border-color,box-shadow,opacity] duration-[var(--motion-theme-base)] ease-[var(--motion-ease-system)] hover:bg-[var(--home-action-hover-bg)] hover:border-[var(--home-action-hover-border)] hover:text-[var(--home-action-hover-text)] motion-reduce:transition-none"
         >
           DOWNLOAD CV
         </SystemButton>
