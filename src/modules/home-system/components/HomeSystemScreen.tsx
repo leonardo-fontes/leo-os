@@ -1,9 +1,7 @@
 import { SystemButton } from "@/shared/ui/SystemButton";
 import { ThemeToggle } from "@/shared/ui/ThemeToggle";
 import { motion } from "framer-motion";
-import {
-  INTRO_TEXT
-} from "../data/systemGraph.constants";
+import { INTRO_TEXT } from "../data/systemGraph.constants";
 import { HomeSystemMobileScreen } from "./HomeSystemMobileScreen";
 import { SystemGraph } from "./SystemGraph";
 import { SystemSidebar } from "./SystemSidebar";
@@ -34,12 +32,14 @@ function DesktopActionBar({ className }: DesktopActionBarProps) {
   return (
     <div className={className}>
       <ThemeToggle className="flex items-center justify-center p-2" />
-      <SystemButton
-        variant="action"
-        className="home-download-cv-button px-4 py-2"
-      >
-        DOWNLOAD CV
-      </SystemButton>
+      <a href="/cv-leonardo-fontes.pdf" download="Leonardo-Fontes-CV.pdf">
+        <SystemButton
+          variant="action"
+          className="home-download-cv-button px-4 py-2"
+        >
+          DOWNLOAD CV
+        </SystemButton>
+      </a>
     </div>
   );
 }

@@ -72,10 +72,11 @@ export function HomeSystemMobileScreen({
             </motion.button>
           ))}
         </div>
-
-        <SystemButton variant="cta" className="w-full p-4">
-          DOWNLOAD CV
-        </SystemButton>
+        <a href="/cv-leonardo-fontes.pdf" download="Leonardo-Fontes-CV.pdf">
+          <SystemButton variant="cta" className="w-full p-4">
+            DOWNLOAD CV
+          </SystemButton>
+        </a>
       </section>
     </div>
   );
