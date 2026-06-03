@@ -1,5 +1,7 @@
 import { SystemButton } from "@/shared/ui/SystemButton";
 import { ThemeToggle } from "@/shared/ui/ThemeToggle";
+import { ExperienceSystemScreen } from "@/modules/experience-system";
+import { ProjectsSystemScreen } from "@/modules/projects-system";
 import { motion } from "framer-motion";
 import { INTRO_TEXT } from "../data/systemGraph.constants";
 import { HomeSystemMobileScreen } from "./HomeSystemMobileScreen";
@@ -44,17 +46,28 @@ function DesktopActionBar({ className }: DesktopActionBarProps) {
   );
 }
 
+function SectionAnchor({ id }: { id: string }) {
+  return (
+    <section
+      id={id}
+      className="w-full max-w-full overflow-hidden scroll-mt-16"
+      aria-label={id}
+    />
+  );
+}
+
 export function HomeSystemScreen() {
   return (
-    <main className="home-surface relative h-screen w-screen overflow-x-hidden overflow-y-auto text-system-text lg:overflow-hidden">
-      <div className="relative z-10 flex min-h-full w-full lg:h-full">
-        <div className="hidden lg:block">
-          <SystemSidebar />
-        </div>
+    <main className="home-surface relative min-h-screen w-full overflow-x-hidden text-system-text lg:pl-64">
+      <SystemSidebar />
 
-        <section className="relative flex-1 pb-6 lg:pb-0">
-          <MobileHeader />
+      <div className="relative z-10 min-w-0 max-w-full overflow-x-hidden">
+        <MobileHeader />
 
+        <section
+          id="home"
+          className="relative min-h-screen w-full max-w-full overflow-hidden scroll-mt-16 pb-6 lg:pb-0"
+        >
           <div className="mx-3 mt-10 lg:hidden">
             <HomeSystemMobileScreen
               command={INTRO_TEXT.command}
@@ -76,9 +89,14 @@ export function HomeSystemScreen() {
           >
             <SystemGraph />
           </motion.div>
-
-          <SystemStatusBar />
         </section>
+
+        <ExperienceSystemScreen />
+        <ProjectsSystemScreen />
+        <SectionAnchor id="skills" />
+        <SectionAnchor id="contact" />
+
+        <SystemStatusBar />
       </div>
     </main>
   );

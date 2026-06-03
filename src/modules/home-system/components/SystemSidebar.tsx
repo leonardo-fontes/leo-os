@@ -14,18 +14,18 @@ export function SystemSidebar() {
       </div>
       <nav className="mt-14 space-y-4">
         {HOME_SIDEBAR_MENU_ITEMS.map((menuItem, index) => (
-          <button
-            key={menuItem}
+          <a
+            key={menuItem.href}
+            href={menuItem.href}
             className={cn(
               sidebarStyles.navButton,
               index === 0
                 ? sidebarStyles.navButtonActive
                 : sidebarStyles.navButtonIdle,
             )}
-            type="button"
           >
-            {menuItem}
-          </button>
+            {menuItem.label}
+          </a>
         ))}
       </nav>
     </aside>

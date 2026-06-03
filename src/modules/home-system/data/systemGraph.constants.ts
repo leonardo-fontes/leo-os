@@ -13,9 +13,9 @@ export const INTRO_TEXT = {
 };
 
 export const HOME_SIDEBAR_MENU_ITEMS = [
-  "01 HOME",
-  "02 EXPERIENCE",
-  "03 PROJECTS",
-  "04 SKILLS",
-  "05 CONTACT",
-];
+  { label: "01 HOME", href: "#home" },
+  { label: "02 EXPERIENCE", href: "#experience" },
+  { label: "03 PROJECTS", href: "#projects" },
+  { label: "04 SKILLS", href: "#skills" },
+  { label: "05 CONTACT", href: "#contact" },
+] as const;

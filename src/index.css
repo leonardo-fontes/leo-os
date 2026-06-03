@@ -251,6 +251,87 @@
   --home-light-sidebar-shadow: 10px 0 24px rgba(15, 23, 42, 0.06);
   --home-light-surface-grid-opacity: 0.05;
   --home-light-surface-stars-opacity: 0.04;
+
+  /* Experience System semantic tokens */
+  --experience-panel-bg: light-dark(
+    rgba(244, 240, 232, 0.7),
+    rgba(11, 18, 34, 0.64)
+  );
+  --experience-panel-border: light-dark(
+    rgba(100, 116, 139, 0.2),
+    rgba(124, 147, 184, 0.22)
+  );
+  --experience-heading-text: var(--home-heading-text);
+  --experience-body-text: var(--home-body-text);
+  --experience-command-text: var(--home-command-text);
+  --experience-accent-text: light-dark(var(--color-blue-500), #9bb8ff);
+  --experience-highlight-label-text: light-dark(
+    var(--color-blue-600),
+    var(--color-success)
+  );
+  --experience-timeline-line-bg: linear-gradient(
+    180deg,
+    rgba(124, 58, 237, 0.24),
+    rgba(37, 99, 235, 0.58),
+    rgba(168, 85, 247, 0.2)
+  );
+  --experience-dot-shell-bg: var(--home-hero-cta-border-gradient);
+  --experience-dot-bg: light-dark(#e5efff, #7c3aed);
+  --experience-dot-shadow: 0 0 18px rgba(124, 58, 237, 0.4);
+  --experience-tech-card-bg: light-dark(
+    rgba(255, 255, 255, 0.42),
+    rgba(16, 26, 49, 0.68)
+  );
+  --experience-tech-card-border: light-dark(
+    rgba(100, 116, 139, 0.16),
+    rgba(94, 122, 185, 0.18)
+  );
+  --experience-tech-card-hover-border: var(--home-action-hover-border);
+  --experience-tech-token-bg: var(--home-module-panel-bg);
+  --experience-tech-token-border: var(--home-module-icon-border);
+
+  /* Projects System semantic tokens */
+  --projects-panel-bg: var(--experience-panel-bg);
+  --projects-panel-border: var(--experience-panel-border);
+  --projects-heading-text: var(--home-heading-text);
+  --projects-body-text: var(--home-body-text);
+  --projects-command-text: var(--home-command-text);
+  --projects-accent-text: var(--experience-accent-text);
+  --projects-success-text: var(--experience-highlight-label-text);
+  --projects-filter-bg: light-dark(
+    rgba(255, 255, 255, 0.28),
+    rgba(13, 21, 41, 0.66)
+  );
+  --projects-filter-border: var(--home-action-border);
+  --projects-filter-text: var(--home-action-text);
+  --projects-filter-active-bg: light-dark(
+    var(--home-sidebar-nav-active-bg),
+    var(--color-purple-600)
+  );
+  --projects-filter-active-border: var(--home-action-hover-border);
+  --projects-filter-active-text: var(--home-sidebar-nav-active-text);
+  --projects-card-bg: light-dark(
+    rgba(255, 255, 255, 0.32),
+    rgba(11, 18, 34, 0.58)
+  );
+  --projects-card-border: var(--experience-tech-card-border);
+  --projects-card-active-bg: light-dark(
+    rgba(36, 52, 83, 0.24),
+    rgba(31, 28, 86, 0.72)
+  );
+  --projects-card-active-border: light-dark(
+    rgba(79, 119, 204, 0.48),
+    rgba(124, 58, 237, 0.74)
+  );
+  --projects-card-active-shadow: 0 0 24px rgba(124, 58, 237, 0.22);
+  --projects-token-bg: var(--home-module-panel-bg);
+  --projects-token-border: var(--home-module-icon-border);
+  --projects-tag-bg: light-dark(
+    rgba(255, 255, 255, 0.34),
+    rgba(16, 26, 49, 0.72)
+  );
+  --projects-tag-border: var(--experience-tech-card-border);
+  --projects-tag-text: var(--projects-body-text);
 }
 
 /* Compatibility layer. data-theme remains the source of truth. */
@@ -292,6 +373,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-system-background text-system-text;
     font-family: "Inter", sans-serif;
@@ -304,7 +389,12 @@
   .home-surface,
   .home-surface::before,
   .home-surface::after,
-  .home-core-panel {
+  .home-core-panel,
+  .experience-panel,
+  .experience-timeline-panel,
+  .experience-tech-card,
+  .projects-detail-panel,
+  .projects-list-item {
     transition-property: background-color, box-shadow, opacity;
     transition-duration: var(--motion-theme-slowest);
     transition-timing-function: var(--motion-ease-system);
@@ -317,7 +407,8 @@
   }
 
   .home-module-panel,
-  .home-status-bar {
+  .home-status-bar,
+  .experience-timeline-dot {
     transition-property: background-color, border-color, box-shadow, opacity;
     transition-duration: var(--motion-theme-medium);
     transition-timing-function: var(--motion-ease-system);
@@ -327,6 +418,7 @@
   .home-explore-button,
   .home-terminal-button,
   .home-theme-toggle,
+  .projects-filter-button,
   .home-sidebar-nav,
   .home-sidebar-nav-idle,
   .home-sidebar-nav-active {
@@ -346,8 +438,6 @@
   .home-intro-command,
   .home-section-label,
   .home-sidebar-title,
-  .home-status-bar-content,
-  .home-status-bar-title,
   .home-hero-name-gradient {
     transition-property: color, opacity;
     transition-duration: var(--motion-theme-fast);
@@ -366,8 +456,6 @@
     .home-module-panel,
     .home-core-panel,
     .home-status-bar,
-    .home-status-bar-content,
-    .home-status-bar-title,
     .home-download-cv-button,
     .home-explore-button,
     .home-terminal-button,
@@ -376,6 +464,13 @@
     .home-hero-subtitle,
     .home-hero-description,
     .home-hero-command,
+    .experience-panel,
+    .experience-timeline-panel,
+    .experience-tech-card,
+    .experience-timeline-dot,
+    .projects-detail-panel,
+    .projects-list-item,
+    .projects-filter-button,
     .home-intro-title,
     .home-intro-subtitle,
     .home-intro-description,
@@ -383,6 +478,10 @@
     .home-section-label,
     .home-hero-name-gradient {
       transition: none;
+    }
+
+    html {
+      scroll-behavior: auto;
     }
   }
 
@@ -530,6 +629,104 @@
       auto;
     opacity: 0.14;
     pointer-events: none;
+  }
+
+  .experience-surface {
+    position: relative;
+  }
+
+  .experience-panel,
+  .experience-timeline-panel {
+    color: var(--experience-body-text);
+  }
+
+  .experience-panel::before,
+  .experience-timeline-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      520px 260px at 18% 0%,
+      rgba(37, 99, 235, 0.12),
+      transparent 64%
+    );
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .experience-panel::before,
+  .experience-timeline-panel::before {
+    display: none;
+  }
+
+  .experience-panel > *,
+  .experience-timeline-panel > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .experience-panel::before,
+    .experience-timeline-panel::before {
+      display: block;
+    }
+  }
+
+  .experience-timeline-line {
+    background: var(--experience-timeline-line-bg);
+    box-shadow: 0 0 18px rgba(124, 58, 237, 0.24);
+  }
+
+  .experience-timeline-dot {
+    background: var(--experience-dot-shell-bg);
+    box-shadow: var(--experience-dot-shadow);
+  }
+
+  .experience-tech-card:hover {
+    box-shadow: 0 0 24px rgba(37, 99, 235, 0.16);
+  }
+
+  .projects-surface {
+    position: relative;
+  }
+
+  .projects-filter-scroll {
+    scrollbar-width: none;
+  }
+
+  .projects-filter-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects-filter-button:hover,
+  .projects-list-item:hover {
+    border-color: var(--projects-card-active-border);
+  }
+
+  .projects-list-item-active {
+    background-color: var(--projects-card-active-bg);
+    border-color: var(--projects-card-active-border);
+    box-shadow: var(--projects-card-active-shadow);
+  }
+
+  .projects-detail-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      520px 260px at 18% 0%,
+      rgba(37, 99, 235, 0.12),
+      transparent 64%
+    );
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .projects-detail-panel > * {
+    position: relative;
+    z-index: 1;
   }
 
   [data-theme="light"] .home-surface {

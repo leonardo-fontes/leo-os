@@ -63,7 +63,7 @@ export const systemCoreStyles = {
 
 export const sidebarStyles = {
   container:
-    "home-sidebar-shell relative z-20 flex h-full w-64 shrink-0 flex-col border-r border-[var(--home-sidebar-border)] bg-[var(--home-sidebar-bg)] px-6 py-8 backdrop-blur-md",
+    "home-sidebar-shell fixed left-0 top-0 z-40 hidden h-screen w-64 flex-col border-r border-[var(--home-sidebar-border)] bg-[var(--home-sidebar-bg)] px-6 py-8 backdrop-blur-md lg:flex",
   title:
     "home-sidebar-title font-display text-2xl tracking-[0.2em] text-[var(--home-sidebar-title)]",
   statusDot:
@@ -80,11 +80,11 @@ export const sidebarStyles = {
 
 export const statusBarStyles = {
   container:
-    "home-status-bar absolute bottom-0 left-0 right-0 z-20 border-t border-system-borderSoft bg-[color:var(--home-status-bar-bg)]/55 px-8 py-4 backdrop-blur-sm",
+    "home-status-bar w-full border-t border-system-borderSoft bg-[color:var(--home-status-bar-bg)]/55 px-4 py-4 backdrop-blur-sm lg:px-8",
   content:
-    "home-status-bar-content flex flex-wrap items-center gap-x-7 gap-y-2 text-xs font-mono tracking-[0.08em] text-[var(--home-status-bar-text)] sm:text-sm",
+    "home-status-bar-content flex flex-wrap items-center gap-x-7 gap-y-2 text-xs font-mono tracking-[0.08em] text-[var(--home-status-bar-text)] transition-[color,opacity] duration-[var(--motion-theme-fast)] ease-[var(--motion-ease-system)] motion-reduce:transition-none sm:text-sm",
   title:
-    "home-status-bar-title text-[var(--home-status-bar-title)]",
+    "home-status-bar-title text-[var(--home-status-bar-title)] transition-[color,opacity] duration-[var(--motion-theme-fast)] ease-[var(--motion-ease-system)] motion-reduce:transition-none",
   online: "text-system-success",
 } as const;
 

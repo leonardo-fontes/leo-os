@@ -2,18 +2,11 @@ export type ThemeMode = "light" | "dark";
 
 const THEME_KEY = "leo-os-theme";
 
-function getSystemTheme(): ThemeMode {
-  if (typeof window === "undefined") return "dark";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
-
 export function getInitialTheme(): ThemeMode {
   if (typeof window === "undefined") return "dark";
   const savedTheme = window.localStorage.getItem(THEME_KEY);
   if (savedTheme === "light" || savedTheme === "dark") return savedTheme;
-  return getSystemTheme();
+  return "dark";
 }
 
 export function applyTheme(theme: ThemeMode) {
